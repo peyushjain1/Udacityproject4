@@ -8,13 +8,14 @@ dockerpath=peyushjain/api
 
 # Step 2
 # Run the Docker Hub container with kubernetes
-kubectl run --generator=run-pod/v1 --image=docker.io/peyushjain/api api 
+kubectl run --generator=run-pod/v1 --image=docker.io/peyushjain/api prediction 
 
 # Step 3:
 # List kubernetes pods
+kubectl get pods
 
 # Step 4:
 # Forward the container port to a host
-kubectl port-forward pod/api 8000:80
+kubectl port-forward pod/prediction 8000:80
 
 
