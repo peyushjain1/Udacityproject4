@@ -6,7 +6,7 @@
 # Step 1:
 # Create dockerpath
 # dockerpath is userid/repo
- $dockerpath=peyushjain/api
+dockerpath=peyushjain/api
 
 # Step 2:  
 # Authenticate & tag
