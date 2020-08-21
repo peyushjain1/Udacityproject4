@@ -1,10 +1,20 @@
-root@ip-172-31-15-225:~# kubectl port-forward pod/prediction 8000:80
+root@ip-172-31-13-167:~# kubectl port-forward pod/prediction 8000:80
 Forwarding from 127.0.0.1:8000 -> 80
 Forwarding from [::1]:8000 -> 80
 Handling connection for 8000
+Handling connection for 8000
+Handling connection for 8000
 
 
-root@ip-172-31-15-225:/home/ubuntu/Udacityproject4# kubectl logs prediction
+root@ip-172-31-13-167:/home/ubuntu/Udacityproject4# ./make_prediction.sh        
+Port: 8000                                                                      
+{                                                                               
+  "prediction": [                                                               
+    20.35373177134412                                                           
+  ]                                                                             
+}                                                                               
+
+root@ip-172-31-13-167:/home/ubuntu/Udacityproject4# kubectl logs prediction
  * Serving Flask app "app" (lazy loading)
  * Environment: production
    WARNING: Do not use the development server in a production environment.
@@ -14,12 +24,36 @@ root@ip-172-31-15-225:/home/ubuntu/Udacityproject4# kubectl logs prediction
  * Restarting with stat
  * Debugger is active!
  * Debugger PIN: 129-516-115
-[2020-08-20 11:24:20,395] INFO in app: JSON payload:
+[2020-08-21 12:52:24,853] INFO in app: JSON payload:
 {'CHAS': {'0': 0}, 'RM': {'0': 6.575}, 'TAX': {'0': 296.0}, 'PTRATIO': {'0': 15.3}, 'B': {'0': 396.9}, 'LSTAT': {'0': 4.98}}
-[2020-08-20 11:24:20,408] INFO in app: Inference payload DataFrame:
+[2020-08-21 12:52:24,867] INFO in app: Inference payload DataFrame:
    CHAS     RM    TAX  PTRATIO      B  LSTAT
 0     0  6.575  296.0     15.3  396.9   4.98
-[2020-08-20 11:24:20,418] INFO in app: Scaling Payload:
+[2020-08-21 12:52:24,877] INFO in app: Scaling Payload:
    CHAS     RM    TAX  PTRATIO      B  LSTAT
 0     0  6.575  296.0     15.3  396.9   4.98
-127.0.0.1 - - [20/Aug/2020 11:24:20] "POST /predict HTTP/1.1" 200 -
+[2020-08-21 12:52:24,881] INFO in app: prediction:
+[20.35373177134412]
+127.0.0.1 - - [21/Aug/2020 12:52:24] "POST /predict HTTP/1.1" 200 -
+[2020-08-21 12:53:00,046] INFO in app: JSON payload:
+{'CHAS': {'0': 0}, 'RM': {'0': 6.575}, 'TAX': {'0': 296.0}, 'PTRATIO': {'0': 15.3}, 'B': {'0': 396.9}, 'LSTAT': {'0': 4.98}}
+[2020-08-21 12:53:00,059] INFO in app: Inference payload DataFrame:
+   CHAS     RM    TAX  PTRATIO      B  LSTAT
+0     0  6.575  296.0     15.3  396.9   4.98
+[2020-08-21 12:53:00,070] INFO in app: Scaling Payload:
+   CHAS     RM    TAX  PTRATIO      B  LSTAT
+0     0  6.575  296.0     15.3  396.9   4.98
+[2020-08-21 12:53:00,073] INFO in app: prediction:
+[20.35373177134412]
+127.0.0.1 - - [21/Aug/2020 12:53:00] "POST /predict HTTP/1.1" 200 -
+[2020-08-21 13:03:05,744] INFO in app: JSON payload:
+{'CHAS': {'0': 0}, 'RM': {'0': 6.575}, 'TAX': {'0': 296.0}, 'PTRATIO': {'0': 15.3}, 'B': {'0': 396.9}, 'LSTAT': {'0': 4.98}}
+[2020-08-21 13:03:05,757] INFO in app: Inference payload DataFrame:
+   CHAS     RM    TAX  PTRATIO      B  LSTAT
+0     0  6.575  296.0     15.3  396.9   4.98
+[2020-08-21 13:03:05,767] INFO in app: Scaling Payload:
+   CHAS     RM    TAX  PTRATIO      B  LSTAT
+0     0  6.575  296.0     15.3  396.9   4.98
+[2020-08-21 13:03:05,770] INFO in app: prediction:
+[20.35373177134412]
+127.0.0.1 - - [21/Aug/2020 13:03:05] "POST /predict HTTP/1.1" 200 -
